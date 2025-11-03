@@ -41,6 +41,46 @@
         <option>Open Innovation</option>
       </select>
 
+      <label>Experience Level:</label>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="experience" value="beginner" required>
+          <span class="radio-label">Beginner</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="experience" value="intermediate">
+          <span class="radio-label">Intermediate</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="experience" value="advanced">
+          <span class="radio-label">Advanced</span>
+        </label>
+      </div>
+
+      <label>Areas of Interest (Select all that apply):</label>
+      <div class="checkbox-group">
+        <label class="checkbox-option">
+          <input type="checkbox" name="interests[]" value="machine-learning">
+          <span class="checkbox-label">Machine Learning</span>
+        </label>
+        <label class="checkbox-option">
+          <input type="checkbox" name="interests[]" value="web-design">
+          <span class="checkbox-label">Web Design</span>
+        </label>
+        <label class="checkbox-option">
+          <input type="checkbox" name="interests[]" value="mobile-dev">
+          <span class="checkbox-label">Mobile Development</span>
+        </label>
+        <label class="checkbox-option">
+          <input type="checkbox" name="interests[]" value="data-science">
+          <span class="checkbox-label">Data Science</span>
+        </label>
+        <label class="checkbox-option">
+          <input type="checkbox" name="interests[]" value="ui-ux">
+          <span class="checkbox-label">UI/UX Design</span>
+        </label>
+      </div>
+
       <button type="submit">Register</button>
     </form>
   </div>

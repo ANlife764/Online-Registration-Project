@@ -51,3 +51,39 @@ button {
 button:hover {
   background: #1e3a8a;
 }
+
+.radio-group, .checkbox-group {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.radio-option, .checkbox-option {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  margin-top: 0;
+}
+
+.radio-label, .checkbox-label {
+  font-weight: normal;
+}
+
+.radio-group {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.checkbox-group {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+}

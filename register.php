@@ -7,6 +7,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $team = htmlspecialchars($_POST['team']);
     $members = htmlspecialchars($_POST['members']);
     $track = htmlspecialchars($_POST['track']);
+    $experience = htmlspecialchars($_POST['experience']);
+    
+    // Handle multiple choice interests
+    $interests = [];
+    if (isset($_POST['interests'])) {
+        foreach ($_POST['interests'] as $interest) {
+            $interests[] = htmlspecialchars($interest);
+        }
+    }
+    $interests_display = empty($interests) ? 'None selected' : implode(', ', $interests);
 
     echo "
     <html>
@@ -24,6 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><strong>Team Name:</strong> $team</p>
         <p><strong>Members:</strong> $members</p>
         <p><strong>Track:</strong> $track</p>
+        <p><strong>Experience Level:</strong> " . ucfirst($experience) . "</p>
+        <p><strong>Areas of Interest:</strong> $interests_display</p>
         <a href='index.html'><button>Go Back</button></a>
       </div>
     </body>
