@@ -1,11 +1,9 @@
 services:
   - type: web
-    name: registration-form
+    name: hackathon-form
     env: docker
     plan: free
-    buildCommand: ""
-    startCommand: "php -S 0.0.0.0:10000"
-    autoDeploy: true
+    dockerfilePath: ./Dockerfile
     envVars:
-      - key: PHP_VERSION
-        value: 8.2
+      - key: PORT
+        value: 80

@@ -1,7 +1,8 @@
-FROM php:8.2-cli
-WORKDIR /app
-COPY . /app
+# Use PHP Apache base image
+FROM php:8.2-apache
 
-EXPOSE 10000
+# Copy all project files into the Apache document root
+COPY . /var/www/html/
 
-CMD ["php", "-S", "0.0.0.0:10000"]
+# Expose port 80 for Render
+EXPOSE 80
