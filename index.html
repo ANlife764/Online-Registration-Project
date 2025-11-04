@@ -13,26 +13,37 @@
     <p>Fill in your details below to participate in the upcoming hackathon!</p>
 
     <form id="hackathonForm" method="POST" action="register.php">
+      <!-- Name -->
       <label>Full Name:</label>
-      <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+      <input type="text" name="name" id="name" placeholder="Enter your full name">
+      <span id="nameError" class="error"></span>
 
+      <!-- Email -->
       <label>Email:</label>
-      <input type="email" name="email" id="email" placeholder="you@example.com" required>
+      <input type="email" name="email" id="email" placeholder="you@example.com">
+      <span id="emailError" class="error"></span>
 
+      <!-- Phone -->
       <label>Phone Number:</label>
-      <input type="tel" name="phone" id="phone" placeholder="10-digit number" required>
+      <input type="tel" name="phone" id="phone" placeholder="10-digit number">
+      <span id="phoneError" class="error"></span>
 
+      <!-- College -->
       <label>College / Organization:</label>
-      <input type="text" name="college" id="college" required>
+      <input type="text" name="college" id="college">
+      <span id="collegeError" class="error"></span>
 
+      <!-- Team Name -->
       <label>Team Name:</label>
-      <input type="text" name="team" id="team" required>
+      <input type="text" name="team" id="team">
 
+      <!-- Number of Members -->
       <label>Number of Team Members:</label>
-      <input type="number" name="members" id="members" min="1" max="6" required>
+      <input type="number" name="members" id="members" min="1" max="6">
 
+      <!-- Track -->
       <label>Track / Category:</label>
-      <select name="track" id="track" required>
+      <select name="track" id="track">
         <option value="">--Select a Track--</option>
         <option>Artificial Intelligence</option>
         <option>Web Development</option>
@@ -40,11 +51,13 @@
         <option>IoT & Robotics</option>
         <option>Open Innovation</option>
       </select>
+      <span id="trackError" class="error"></span>
 
+      <!-- Experience Level -->
       <label>Experience Level:</label>
       <div class="radio-group">
         <label class="radio-option">
-          <input type="radio" name="experience" value="beginner" required>
+          <input type="radio" name="experience" value="beginner">
           <span class="radio-label">Beginner</span>
         </label>
         <label class="radio-option">
@@ -57,6 +70,7 @@
         </label>
       </div>
 
+      <!-- Areas of Interest -->
       <label>Areas of Interest (Select all that apply):</label>
       <div class="checkbox-group">
         <label class="checkbox-option">
@@ -81,6 +95,7 @@
         </label>
       </div>
 
+      <!-- Submit -->
       <button type="submit">Register</button>
     </form>
   </div>

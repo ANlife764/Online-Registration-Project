@@ -87,3 +87,10 @@ button:hover {
   border-radius: 8px;
   padding: 10px;
 }
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 4px;
+}
