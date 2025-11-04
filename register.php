@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            . "------------------------------\n";
 
     // Save to a text file (append mode)
-    $file = 'registrations.txt';
+    $file = 'registration.txt';
     if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX)) {
         echo "Registration saved successfully!";
     } else {
