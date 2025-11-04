@@ -18,28 +18,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     $interests_display = empty($interests) ? 'None selected' : implode(', ', $interests);
 
-    echo "
-    <html>
-    <head>
-      <link rel='stylesheet' href='style.css'>
-    </head>
-    <body style='background: #f9fafb;'>
-      <div class='container'>
-        <h1>Registration Successful!</h1>
-        <p>Here are your submitted details:</p>
-        <p><strong>Name:</strong> $name</p>
-        <p><strong>Email:</strong> $email</p>
-        <p><strong>Phone:</strong> $phone</p>
-        <p><strong>College:</strong> $college</p>
-        <p><strong>Team Name:</strong> $team</p>
-        <p><strong>Members:</strong> $members</p>
-        <p><strong>Track:</strong> $track</p>
-        <p><strong>Experience Level:</strong> " . ucfirst($experience) . "</p>
-        <p><strong>Areas of Interest:</strong> $interests_display</p>
-        <a href='index.html'><button>Go Back</button></a>
-      </div>
-    </body>
-    </html>
-    ";
-}
+    // Create formatted string for saving
+    $entry = "Name: $name\n"
+           . "Email: $email\n"
+           . "Phone: $phone\n"
+           . "College: $college\n"
+           . "Team: $team\n"
+           . "Members: $members\n"
+           . "Track: $track\n"
+           . "Experience: $experience\n"
+           . "Interests: $interests\n"
+           . "------------------------------\n";
+
+    // Save to a text file (append mode)
+    $file = 'registrations.txt';
+    if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX)) {
+        echo "Registration saved successfully!";
+    } else {
+        echo "Error: Could not save registration.";
+    }
 ?>
